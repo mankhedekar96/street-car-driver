@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Car from "./images/car.svg";
 
 //Components
 import PlayersCar from "./components/players-car/PlayersCar";
@@ -278,7 +277,6 @@ class App extends React.Component {
           <RoadLanes numberOfLanes={this.numberOfLanes} />
         </div>
         <PlayersCar
-          car={Car}
           left={this.state.playersCarLeft + "%"}
           brakeLight={this.state.brakeLight}
           boost={this.state.boost}

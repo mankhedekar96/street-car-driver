@@ -1,7 +1,11 @@
 import React from "react";
 import "./PlayersCar.css";
 import Flames from '../flames/Flames';
+import CarImages from './../../car-images';
 
+const carsArray = CarImages();
+
+const randomCar = carsArray[Math.floor(Math.random() * carsArray.length)];
 
 export default function PlayersCar (props) {
     const position = {
@@ -14,7 +18,7 @@ export default function PlayersCar (props) {
   
     return (
       <div style={position} className="players-car">
-        <img src={props.car} className="players-car--img" alt="Player's Car" />
+        <img src={randomCar} className="players-car--img" alt="Player's Car" />
         <div style={brakeLight} className="brakelight brakelight--left"></div>
         <div style={brakeLight} className="brakelight brakelight--right"></div>
         { !props.brakeLight && props.boost && <Flames className="flames--left"/>}
