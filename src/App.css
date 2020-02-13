@@ -1,38 +1,39 @@
-.App {
-  text-align: center;
+.container {
+  position: relative;
+  max-width: 480px;
+  max-height: 720px;
+  min-width: 320px;
+  min-height: 560px;
+  width: 100vw;
+  height: 100vh;
+  padding: 5px;
+  margin: 0 auto;
+  background: #50707b;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.road {
+  height: 100%;
+  background: url("images/background-road.jpg");
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-size: 100% auto;
+  height: 100%;
+  animation: roadMoving 100s linear infinite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.animation-stopper * {
+  animation: none !important;
+  transition: none !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes roadMoving {
   from {
-    transform: rotate(0deg);
+    background-position: 0 0;
   }
+  /*use negative width if you want it to flow right to left else and positive for left to right*/
   to {
-    transform: rotate(360deg);
+    background-position: 0 10000px;
   }
 }
