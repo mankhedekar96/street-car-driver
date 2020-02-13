@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d46df1dd.chunk.css",
+    "main.js": "/static/js/main.109b7543.chunk.js",
+    "main.js.map": "/static/js/main.109b7543.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.eaa54b18.js",
+    "runtime-main.js.map": "/static/js/runtime-main.eaa54b18.js.map",
+    "static/js/2.5c51bf0c.chunk.js": "/static/js/2.5c51bf0c.chunk.js",
+    "static/js/2.5c51bf0c.chunk.js.map": "/static/js/2.5c51bf0c.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.1823d62a31d4b213c150d7356e81511b.js": "/precache-manifest.1823d62a31d4b213c150d7356e81511b.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.d46df1dd.chunk.css.map": "/static/css/main.d46df1dd.chunk.css.map",
+    "static/js/2.5c51bf0c.chunk.js.LICENSE.txt": "/static/js/2.5c51bf0c.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/background-road.6ebe9ea9.jpg",
+    "static/media/car-black.svg": "/static/media/car-black.5bda2a48.svg",
+    "static/media/car-blue.svg": "/static/media/car-blue.9871c65e.svg",
+    "static/media/car-cornflowerblue.svg": "/static/media/car-cornflowerblue.f45ac8cd.svg",
+    "static/media/car-cyan.svg": "/static/media/car-cyan.f10dcc0b.svg",
+    "static/media/car-darkgreen.svg": "/static/media/car-darkgreen.b3fe1f20.svg",
+    "static/media/car-gray.svg": "/static/media/car-gray.be3d5c36.svg",
+    "static/media/car-green.svg": "/static/media/car-green.ad691dcf.svg",
+    "static/media/car-idle.mp3": "/static/media/car-idle.fd74feba.mp3",
+    "static/media/car-maroon.svg": "/static/media/car-maroon.86d07f25.svg",
+    "static/media/car-orange.svg": "/static/media/car-orange.4753a59f.svg",
+    "static/media/car-pink.svg": "/static/media/car-pink.dadbce82.svg",
+    "static/media/car-purple.svg": "/static/media/car-purple.2911196e.svg",
+    "static/media/car-red.svg": "/static/media/car-red.cb454f31.svg",
+    "static/media/car-skyblue.svg": "/static/media/car-skyblue.9eb19bbe.svg",
+    "static/media/car-violet.svg": "/static/media/car-violet.a304ba2f.svg",
+    "static/media/car-white.svg": "/static/media/car-white.eb906f64.svg",
+    "static/media/car-yellow.svg": "/static/media/car-yellow.69b20b3e.svg",
+    "static/media/cars-accelerate.mp3": "/static/media/cars-accelerate.e19fc6c4.mp3",
+    "static/media/tire-skid.wav": "/static/media/tire-skid.31fde6e7.wav"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eaa54b18.js",
+    "static/js/2.5c51bf0c.chunk.js",
+    "static/css/main.d46df1dd.chunk.css",
+    "static/js/main.109b7543.chunk.js"
+  ]
+}
