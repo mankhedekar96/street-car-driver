@@ -20,7 +20,7 @@
   background-position: 0 0;
   background-size: 100% auto;
   height: 100%;
-  animation: roadMoving 100s linear infinite;
+  animation: roadMoving 500s linear infinite;
 }
 
 .animation-stopper * {

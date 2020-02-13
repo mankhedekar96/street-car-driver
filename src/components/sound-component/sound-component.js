@@ -9,7 +9,7 @@ import mp3Idle from './../../audio/sound/car-idle.mp3';
 import mp3Accelerate from './../../audio/sound/cars-accelerate.mp3';
 
 
-export default function AudioComponent(props) {
+export default function SoundComponent(props) {
   return (
     <div className="audio-files">
       <audio className="audio-skid" preload="auto">
