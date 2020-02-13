@@ -107,10 +107,6 @@ class App extends React.Component {
     window.location.reload();
   };
 
-  unmuteSound = () => {
-    this.setState({gameSound : true});
-  };
-
   muteSound = () => {
     this.skidAudio.pause();
     this.skidAudio.muted = true;
@@ -121,8 +117,6 @@ class App extends React.Component {
     this.accelerateAudio.pause();
     this.accelerateAudio.muted = true;
     this.idleAudio.currentTime = 0;
-
-    this.setState({gameSound : false});
   };
 
   driveCar = () => {
@@ -279,7 +273,7 @@ class App extends React.Component {
   render() {
     return (
       <div className={`container ${this.state.animationStopper}`}>
-        {this.state.gameSound && <SoundComponent />}
+        <SoundComponent />
         <div className="road">
           <RoadLanes numberOfLanes={this.numberOfLanes} />
         </div>
