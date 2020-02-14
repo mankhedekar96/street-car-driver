@@ -1,12 +1,20 @@
 export const VehicleColors = [
-    'black',
-    'blue',
-    'cornflowerblue',
-    'gray',
-    'tomato',
-    'purple',
-    'red',
-    'white',
-    'yellow'
-  ];
-
+  "black",
+  "blue",
+  "cornflowerblue",
+  "gray",
+  "tomato",
+  "purple",
+  "red",
+  "white",
+  "yellow",
+  "mediumaquamarine",
+  "mediumbl",
+  "mediumorchid",
+  "mediumpurple",
+  "mediumseagreen",
+  "mediumslateblue",
+  "mediumspringgreen",
+  "mediumturquoise",
+  "mediumvioletred"
+];
