@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/street-car-racer/precache-manifest.da32a5dca1618840d4eda9d3f58b6240.js"
+  "/street-car-racer/precache-manifest.30f588cc5499c814a3c90c06cfd41aac.js"
 );
 
 self.addEventListener('message', (event) => {
