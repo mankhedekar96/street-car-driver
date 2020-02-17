@@ -24,8 +24,7 @@
 }
 
 .animation-stopper * {
-  animation: none !important;
-  transition: none !important;
+  animation-play-state: paused !important;
 }
 
 @keyframes roadMoving {

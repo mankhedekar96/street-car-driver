@@ -19,13 +19,13 @@ export default class GameMenu extends React.Component {
     return (
       <div className="menu">
         <h1>Street Car Racer</h1>
-        {this.state.stage1 && (
+        {!this.props.gameOver && this.state.stage1 && (
           <div>
-            {this.props.gamePaused && 
+            {this.props.gamePaused && (
               <button className="button" onClick={this.props.resumeGame}>
                 RESUME GAME
               </button>
-            }
+            )}
             <button className="button" onClick={this.props.startGame}>
               {this.props.gamePaused ? "START NEW GAME" : "START GAME"}
             </button>
@@ -37,7 +37,7 @@ export default class GameMenu extends React.Component {
             </button>
           </div>
         )}
-        {this.state.stage2 && (
+        {!this.props.gameOver && this.state.stage2 && (
           <div>
             <button className="button" onClick={this.goToMenu}>
               Back
@@ -58,6 +58,15 @@ export default class GameMenu extends React.Component {
                 <span className="slider"></span>
               </label>
             </div>
+          </div>
+        )}
+        {this.props.gameOver && (
+          <div>
+            <h2>Game Over</h2>
+            <h4>Your Score : {this.props.gameScore}</h4>
+            <button className="button" onClick={this.props.exitGame}>
+              New Game
+            </button>
           </div>
         )}
       </div>

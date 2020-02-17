@@ -208,7 +208,7 @@ export default class PlayersCar extends React.Component{
       <div style={position} className="players-car">
         <svg
           id="playersCar"
-          class="players-car--img"
+          className="players-car--img"
           viewBox="0 0 640 1280"
         ></svg>
         <div style={brakeLight} className="brakelight brakelight--left"></div>

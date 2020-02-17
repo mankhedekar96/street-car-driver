@@ -1,0 +1,42 @@
+.obstacle-vehicle {
+    position: absolute;
+    transition: all 0.2s linear;
+    transform: translate(-50%, -90%);
+    animation: movingDown 8s linear;
+}
+
+.obstacle-vehicle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.truck {
+    width: 16%;
+    height: 32%;
+}
+
+.miniTruck {
+    width: 16%;
+    height: 28%
+}
+
+.dumper {
+    width: 16%;
+    height: 24%
+}
+
+.van {
+    width: 15%;
+    height: 22%
+}
+
+@keyframes movingDown {
+    0% {
+      top: -100%;
+    }
+    /*use negative width if you want it to flow right to left else and positive for left to right*/
+    100% {
+      top: 120%;
+    }
+  }
