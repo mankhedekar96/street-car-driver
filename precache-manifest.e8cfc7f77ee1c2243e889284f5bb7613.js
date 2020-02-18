@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0c010343db336bedf2d425abc04bfb6f",
+    "revision": "35855ceeddc5bdd8e9f11f1ab13235ad",
     "url": "/street-car-racer/index.html"
   },
   {
-    "revision": "9a8fb3f4c599166a8b0d",
+    "revision": "69729e8c0e69e1e0f10e",
     "url": "/street-car-racer/static/css/main.15776519.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/street-car-racer/static/js/2.c03fd040.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9a8fb3f4c599166a8b0d",
-    "url": "/street-car-racer/static/js/main.0a92b8b3.chunk.js"
+    "revision": "69729e8c0e69e1e0f10e",
+    "url": "/street-car-racer/static/js/main.9814378a.chunk.js"
   },
   {
     "revision": "81c41c069466bd46b169",
