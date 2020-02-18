@@ -7,12 +7,14 @@ export default class GameMenu extends React.Component {
     super(props);
   }
 
-  handleTouchStart = (key) => {
-      console.log(key);
+  handleTouchStart = (event, key) => {
+      event.key = key;
+      this.props.keyUp(event);
   }
 
-  handleTouchEnd = (key) => {
-      console.log(key);
+  handleTouchEnd = (event, key) => {
+    event.key = key;
+    this.props.keyDown(event);
   }
 
   render() {
@@ -32,18 +34,18 @@ export default class GameMenu extends React.Component {
         {!this.props.gameOver && this.props.gameStarted && !this.props.gamePaused && (
           <>
             <div className="p-abs p-bottom-left">
-              <button className="button" onTouchStart={ () => this.handleTouchStart("ArrowUp") } onTouchEnd={ () => this.handleTouchEnd("ArrowUp") }>
+              <button className="button" onTouchStart={ (e) => this.handleTouchStart(e, "ArrowUp") } onTouchEnd={ (e) => this.handleTouchEnd(e, "ArrowUp") }>
                 <FontAwesomeIcon icon="space-shuttle" />
               </button>
-              <button className="button" onTouchStart={ () => this.handleTouchStart("ArrowDown") } onTouchEnd={ () => this.handleTouchEnd("ArrowDown") }>
+              <button className="button" onTouchStart={ (e) => this.handleTouchStart(e, "ArrowDown") } onTouchEnd={ (e) => this.handleTouchEnd(e, "ArrowDown") }>
                 <FontAwesomeIcon icon="wind" />
               </button>
             </div>
             <div className="p-abs p-bottom-right">
-              <button className="button" onTouchStart={ () => this.handleTouchStart("ArrowLeft") } onTouchEnd={ () => this.handleTouchEnd("ArrowLeft") }>
+              <button className="button" onTouchStart={ (e) => this.handleTouchStart(e, "ArrowLeft") } onTouchEnd={ (e) => this.handleTouchEnd(e, "ArrowLeft") }>
                 <FontAwesomeIcon icon="arrow-alt-circle-left" />
               </button>
-              <button className="button" onTouchStart={ () => this.handleTouchStart("ArrowRight") } onTouchEnd={ () => this.handleTouchEnd("ArrowRight") }>
+              <button className="button" onTouchStart={ (e) => this.handleTouchStart(e, "ArrowRight") } onTouchEnd={ (e) => this.handleTouchEnd(e, "ArrowRight") }>
                 <FontAwesomeIcon icon="arrow-alt-circle-right" />
               </button>
             </div>

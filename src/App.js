@@ -492,17 +492,6 @@ class App extends React.Component {
     }));
   };
 
-  handleTouchStart = e => {
-    window.addEventListener(
-      "touchstart",
-      function setHasTouch() {
-
-        window.removeEventListener("touchstart", setHasTouch);
-      },
-      false
-    );
-  };
-
   componentDidMount() {
     this.skidAudio = document.getElementsByClassName("sound-skid")[0];
     this.accelerateAudio = document.getElementsByClassName(
@@ -571,6 +560,8 @@ class App extends React.Component {
           gameOver={this.state.gameOver}
           pauseGame={this.pauseGame}
           resumeGame={this.resumeGame}
+          keyUp={this.keyUp}
+          keyDown={this.keyDown}
         />
       </div>
     );
