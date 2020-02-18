@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/street-car-racer/static/css/main.218b5845.chunk.css",
-    "main.js": "/street-car-racer/static/js/main.90db302a.chunk.js",
-    "main.js.map": "/street-car-racer/static/js/main.90db302a.chunk.js.map",
+    "main.js": "/street-car-racer/static/js/main.90614dee.chunk.js",
+    "main.js.map": "/street-car-racer/static/js/main.90614dee.chunk.js.map",
     "runtime-main.js": "/street-car-racer/static/js/runtime-main.23576cb4.js",
     "runtime-main.js.map": "/street-car-racer/static/js/runtime-main.23576cb4.js.map",
     "static/js/2.c03fd040.chunk.js": "/street-car-racer/static/js/2.c03fd040.chunk.js",
     "static/js/2.c03fd040.chunk.js.map": "/street-car-racer/static/js/2.c03fd040.chunk.js.map",
     "index.html": "/street-car-racer/index.html",
-    "precache-manifest.20bc4bcd78991a638e709d2038f122b1.js": "/street-car-racer/precache-manifest.20bc4bcd78991a638e709d2038f122b1.js",
+    "precache-manifest.84b68796b7912a5167c6a9d579a1724a.js": "/street-car-racer/precache-manifest.84b68796b7912a5167c6a9d579a1724a.js",
     "service-worker.js": "/street-car-racer/service-worker.js",
     "static/css/main.218b5845.chunk.css.map": "/street-car-racer/static/css/main.218b5845.chunk.css.map",
     "static/js/2.c03fd040.chunk.js.LICENSE.txt": "/street-car-racer/static/js/2.c03fd040.chunk.js.LICENSE.txt",
     "static/media/App.css": "/street-car-racer/static/media/background-road.bbafffa6.jpg",
     "static/media/black-truck.svg": "/street-car-racer/static/media/black-truck.e7746021.svg",
     "static/media/blue-green-truck-mini.svg": "/street-car-racer/static/media/blue-green-truck-mini.cb331f3a.svg",
-    "static/media/car-accelerate.mp3": "/street-car-racer/static/media/car-accelerate.e19fc6c4.mp3",
-    "static/media/car-crash.mp3": "/street-car-racer/static/media/car-crash.5c1e6eb2.mp3",
-    "static/media/car-idle.mp3": "/street-car-racer/static/media/car-idle.fd74feba.mp3",
-    "static/media/car-race-track-1.mp3": "/street-car-racer/static/media/car-race-track-1.70b2909b.mp3",
+    "static/media/car-accelerate.mp3": "/street-car-racer/static/media/car-accelerate.429ac355.mp3",
+    "static/media/car-crash.mp3": "/street-car-racer/static/media/car-crash.d65116f4.mp3",
+    "static/media/car-idle.mp3": "/street-car-racer/static/media/car-idle.dd5371e2.mp3",
+    "static/media/car-race-track-1.mp3": "/street-car-racer/static/media/car-race-track-1.80d5a8dc.mp3",
     "static/media/green-truck.svg": "/street-car-racer/static/media/green-truck.5d154ece.svg",
     "static/media/grey-dumper.svg": "/street-car-racer/static/media/grey-dumper.7a19030a.svg",
     "static/media/orange-van.svg": "/street-car-racer/static/media/orange-van.c06313bb.svg",
@@ -33,6 +33,6 @@
     "static/js/runtime-main.23576cb4.js",
     "static/js/2.c03fd040.chunk.js",
     "static/css/main.218b5845.chunk.css",
-    "static/js/main.90db302a.chunk.js"
+    "static/js/main.90614dee.chunk.js"
   ]
 }
