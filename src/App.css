@@ -20,19 +20,52 @@
   background-position: 0 0;
   background-size: 100% auto;
   height: 100%;
-  animation: roadMoving 500s linear infinite;
+  transition: all 0.2s linear;
+  animation: roadMoving 50s linear infinite;
+  overflow: hidden;
+}
+
+.countdown-digit-container{
+  position: absolute;
+  width: 50%;
+  padding: 0;
+  height: 60px;
+  left: 25%;
+  top: calc(50% - 30px);
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  transform: scale(5);
+  animation: appear 1s ease-in infinite;
+  z-index: 4;
 }
 
 .animation-stopper * {
   animation-play-state: paused !important;
 }
 
+.car-box-shadow {
+  -webkit-filter: drop-shadow(8px 8px 25px rgba(0,0,0,0.5));
+  filter: url(#drop-shadow);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=8, OffY=8, Color='#444')";
+  filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=8, OffY=8, Color='#444')";
+}
+
 @keyframes roadMoving {
-  from {
+  0% {
     background-position: 0 0;
   }
-  /*use negative width if you want it to flow right to left else and positive for left to right*/
-  to {
-    background-position: 0 10000px;
+  100% {
+    background-position: 0 15000px;
+  }
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(5);
   }
 }

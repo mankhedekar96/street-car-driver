@@ -1,0 +1,54 @@
+.game-controller {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: 1px solid tomato;
+    background-color: transparent;
+    color: #dddddd;
+    text-align: center;
+    box-shadow: 0 2px 5px 1px black;
+    z-index: 9;
+}
+
+.game-controller .button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    color: whitesmoke;
+    font-size: 40px;
+    text-align: center;
+}
+
+.p-abs{
+    position: absolute;
+}
+
+.p-top-left{
+    top: 0px;
+    left: 10px;
+}
+
+.p-bottom-left{
+    bottom: 20px;
+    left: 10px;
+}
+
+.p-bottom-left .button{
+    display: block;
+}
+
+.p-bottom-left .button:first-child{
+    transform: rotate(270deg);
+}
+
+.p-bottom-right{
+    bottom: 20px;
+    right: 20px;
+}
+
+.p-bottom-right .button{
+    margin: 5px;
+}

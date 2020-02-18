@@ -18,7 +18,7 @@ export default class GameMenu extends React.Component {
   render() {
     return (
       <div className="menu">
-        <h1>Street Car Racer</h1>
+        <h1>Street Car Driver</h1>
         {!this.props.gameOver && this.state.stage1 && (
           <div>
             {this.props.gamePaused && (
@@ -46,7 +46,7 @@ export default class GameMenu extends React.Component {
             <div className="switch-row">
               <span className="switch-label">Music</span>
               <label className="switch">
-                <input type="checkbox" />
+                <input type="checkbox" onChange={ (e) => this.props.toggleMusic(e.target.checked)} checked={this.props.gameMusic}/>
                 <span className="slider"></span>
               </label>
             </div>
@@ -54,7 +54,7 @@ export default class GameMenu extends React.Component {
             <div className="switch-row">
               <span className="switch-label">Sound</span>
               <label className="switch">
-                <input type="checkbox" />
+                <input type="checkbox" onChange={ (e) => this.props.toggleSound(e.target.checked) } checked={this.props.gameSound}/>
                 <span className="slider"></span>
               </label>
             </div>
@@ -64,7 +64,7 @@ export default class GameMenu extends React.Component {
           <div>
             <h2>Game Over</h2>
             <h4>Your Score : {this.props.gameScore}</h4>
-            <button className="button" onClick={this.props.exitGame}>
+            <button className="button" onClick={this.props.initiateGame}>
               New Game
             </button>
           </div>

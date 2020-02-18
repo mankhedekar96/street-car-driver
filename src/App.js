@@ -4,14 +4,42 @@ import "./App.css";
 //Components
 import PlayersCar from "./components/players-car/PlayersCar";
 import GameMenu from "./components/game-menu/GameMenu";
+import GameControls from "./components/game-controls/GameControls";
 import SoundComponent from "./components/sound-component/SoundComponent";
 import ObstacleVehicle from "./components/obstacle-vehicle/ObstacleVehicle";
+import MusicComponent from "./components/music-component/MusicComponent";
+
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faPlayCircle,
+  faPauseCircle,
+  faArrowAltCircleRight,
+  faArrowAltCircleLeft,
+  faArrowAltCircleDown,
+  faArrowAltCircleUp,
+  faSpaceShuttle,
+  faWind
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(
+  faPlayCircle,
+  faPauseCircle,
+  faArrowAltCircleRight,
+  faArrowAltCircleLeft,
+  faArrowAltCircleDown,
+  faArrowAltCircleUp,
+  faSpaceShuttle,
+  faWind
+);
+
 class App extends React.Component {
   numberOfObstacles = 6;
   playersCarContext = null;
-  carSpeed = 3;
+  road = null;
+  carSpeed = 2;
   animationID = null;
   obstacleID = null;
+  countdownTimerId = null;
   moveMents = {};
   gameKeysArray = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
 
@@ -19,6 +47,8 @@ class App extends React.Component {
   skidAudio = null;
   accelerateAudio = null;
   idleAudio = null;
+  crashAudio = null;
+  musicTrack = null;
 
   constructor(props) {
     super(props);
@@ -28,7 +58,7 @@ class App extends React.Component {
       obstaclesArray: [],
       gameMenu: true,
       gameMusic: true,
-      gameSound: false,
+      gameSound: true,
       gameScore: 0,
       gameStarted: false,
       gamePaused: false,
@@ -38,26 +68,57 @@ class App extends React.Component {
       skidAudio: false,
       accelerateAudio: false,
       idleAudio: false,
+      crashAudio: false,
       keys: {
         ArrowUp: false,
         ArrowDown: false,
         ArrowLeft: false,
         ArrowRight: false
       },
-      animationStopper: "animation-stopper"
+      countDownDigit: null,
+      animationStopper: "animation-stopper",
+      boxShadowInset: "inset 0 0 3px 3px black"
     };
 
-    this.moveMents = {
-      ArrowUp: EmptyFunction,
-      ArrowDown: EmptyFunction,
-      ArrowLeft: EmptyFunction,
-      ArrowRight: EmptyFunction
-    };
+    this.connectingMovements();
   }
+
+  initiateGame = () => {
+    window.addEventListener("keydown", this.keyDown);
+    window.addEventListener("keyup", this.keyUp);
+
+    this.setState({
+      playersCarLeft: 50,
+      playersCarBottom: 1,
+      obstaclesArray: [],
+      gameMenu: true,
+      gameScore: 0,
+      gameStarted: false,
+      gamePaused: false,
+      gameOver: false,
+      brakeLight: false,
+      boost: false,
+      skidAudio: false,
+      accelerateAudio: false,
+      idleAudio: false,
+      crashAudio: false,
+      keys: {
+        ArrowUp: false,
+        ArrowDown: false,
+        ArrowLeft: false,
+        ArrowRight: false
+      },
+      countDownDigit: null,
+      animationStopper: "animation-stopper",
+      boxShadowInset: "inset 0 0 3px 3px black"
+    });
+
+    this.unmuteSound();
+  };
 
   setGameIntervals = () => {
     this.animationID = setInterval(this.driveCar, 200);
-    this.obstacleID = setInterval(this.obstacleGenerator, 3000);
+    this.obstacleID = setInterval(this.obstacleGenerator, 4000);
   };
 
   clearGameIntervals = () => {
@@ -83,6 +144,36 @@ class App extends React.Component {
     };
   };
 
+  countDownTimer = () => {
+    let counter = 3;
+
+    this.setState({
+      countDownDigit: (
+        <div className="countdown-digit-container">
+          {counter > 0 ? counter : "GO"}
+        </div>
+      )
+    });
+
+    this.countdownTimerId = setInterval(() => {
+      counter--;
+
+      if (counter < 0) {
+        clearInterval(this.countdownTimerId);
+        this.setState({ countDownDigit: null });
+        return 0;
+      } else {
+        this.setState({
+          countDownDigit: (
+            <div className="countdown-digit-container">
+              {counter > 0 ? counter : "GO"}
+            </div>
+          )
+        });
+      }
+    }, 1000);
+  };
+
   startGame = () => {
     this.connectingMovements();
     this.setState({
@@ -102,6 +193,7 @@ class App extends React.Component {
       animationStopper: ""
     });
     this.setGameIntervals();
+    this.countDownTimer();
     this.carIdleSound();
   };
 
@@ -120,40 +212,82 @@ class App extends React.Component {
     this.connectingMovements();
     this.setState({ gameMenu: false, animationStopper: "", gamePaused: false });
     this.setGameIntervals();
+    this.unmuteSound();
     this.carIdleSound();
   };
 
   gameOver = () => {
-    this.pauseGame();
+    if (this.state.gameSound) this.carCrashSound();
+
+    this.muteSound();
+
     this.setState({
-      gameOver: true
+      animationStopper: "animation-stopper",
+      boxShadowInset: "inset 0 0 45px 25px black"
     });
+    this.disconnectingMovements();
+    this.clearGameIntervals();
+
+    window.removeEventListener("keydown", this.keyDown);
+    window.removeEventListener("keyup", this.keyUp);
+
+    setTimeout(() => {
+      this.setState({
+        gameMenu: true,
+        gameOver: true
+      });
+    }, 1000);
   };
 
   exitGame = () => {
     window.location.reload();
   };
 
+  musicTrackPlay = () => {
+    // if (this.state.gameMusic) {
+    //   this.musicTrack.volume = 0.8;
+    //   this.musicTrack.loop = true;
+    //   this.musicTrack.currentTime = 0;
+    //   this.musicTrack.play();
+    // }
+  };
+
   muteSound = () => {
-    this.skidAudio.pause();
-    this.skidAudio.muted = true;
-    this.skidAudio.currentTime = 0;
-    this.idleAudio.pause();
-    this.idleAudio.muted = true;
-    this.idleAudio.currentTime = 0;
-    this.accelerateAudio.pause();
-    this.accelerateAudio.muted = true;
-    this.idleAudio.currentTime = 0;
+    if (this.state.gameSound) {
+      this.accelerateAudio.muted = this.idleAudio.muted = this.skidAudio.muted = true;
+      this.skidAudio.currentTime = this.idleAudio.currentTime = this.accelerateAudio.currentTime = 0;
+      this.idleAudio.pause();
+      this.skidAudio.pause();
+      this.accelerateAudio.pause();
+    }
+  };
+
+  unmuteSound = () => {
+    if (this.state.gameSound) {
+      this.skidAudio.muted = this.idleAudio.muted = this.accelerateAudio.muted = false;
+    }
+  };
+
+  toggleSound = val => {
+    this.setState({ gameSound: val });
+    if (!val)
+      this.skidAudio.muted = this.idleAudio.muted = this.accelerateAudio.muted = !val;
+  };
+
+  toggleMusic = val => {
+    this.setState({ gameMusic: val });
+    this.musicTrack.muted = !val;
   };
 
   driveCar = () => {
-    this.gameKeysArray.forEach(key => {
-      if (this.state.keys[key]) this.moveMents[key]();
-    });
-
     this.state.obstaclesArray.forEach(obstacle => {
-      if (this.carCrash(obstacle.obstacleId)) this.gameOver();
-      return true;
+      if (!this.carCrash(obstacle.obstacleId)) {
+        this.gameKeysArray.forEach(key => {
+          if (this.state.keys[key]) this.moveMents[key]();
+        });
+      } else {
+        this.gameOver();
+      }
     });
   };
 
@@ -162,7 +296,10 @@ class App extends React.Component {
       this.state.playersCarBottom < 85
         ? this.state.playersCarBottom + this.carSpeed
         : 85;
-    this.setState({ playersCarBottom: bottom, boost: true });
+    this.setState({
+      playersCarBottom: bottom,
+      boost: true
+    });
 
     this.idleAudio.pause();
     this.idleAudio.currentTime = 0;
@@ -174,7 +311,10 @@ class App extends React.Component {
       this.state.playersCarBottom > 1
         ? this.state.playersCarBottom - this.carSpeed
         : 1;
-    this.setState({ playersCarBottom: bottom, brakeLight: true });
+    this.setState({
+      playersCarBottom: bottom,
+      brakeLight: true
+    });
 
     this.idleAudio.pause();
     this.idleAudio.currentTime = 0;
@@ -197,41 +337,57 @@ class App extends React.Component {
     this.setState({ playersCarLeft: left });
   };
 
-  carAccelerationSound() {
+  carAccelerationSound = () => {
     this.setState({
       skidAudio: false,
       accelerateAudio: true,
-      idleAudio: false
+      idleAudio: false,
+      crashAudio: false
     });
-    this.accelerateAudio.volume = 0.2;
+    this.accelerateAudio.volume = 0.8;
     this.accelerateAudio.currentTime = 1.3;
     this.accelerateAudio.playbackRate = 1.3;
     this.accelerateAudio.play();
-  }
+  };
 
-  tireSkidSound() {
+  tireSkidSound = () => {
     this.setState({
       skidAudio: true,
       accelerateAudio: false,
-      idleAudio: false
+      idleAudio: false,
+      crashAudio: false
     });
-    this.skidAudio.volume = 0.5;
+    this.skidAudio.volume = 0.8;
     this.skidAudio.currentTime = 1.3;
     this.skidAudio.play();
-  }
+  };
 
-  carIdleSound() {
+  carIdleSound = () => {
     this.setState({
       skidAudio: false,
       accelerateAudio: false,
-      idleAudio: true
+      idleAudio: true,
+      crashAudio: false
     });
-    this.idleAudio.volume = 0.8;
+    this.idleAudio.volume = 1;
     this.idleAudio.loop = true;
     this.idleAudio.playbackRate = 0.7;
     this.idleAudio.currentTime = 0;
     this.idleAudio.play();
-  }
+  };
+
+  carCrashSound = () => {
+    this.setState({
+      skidAudio: false,
+      accelerateAudio: false,
+      idleAudio: false,
+      crashAudio: true
+    });
+    this.crashAudio.volume = 1;
+    this.crashAudio.muted = false;
+    this.crashAudio.playbackRate = 1.2;
+    this.crashAudio.play();
+  };
 
   keyUp = event => {
     event.preventDefault();
@@ -292,10 +448,10 @@ class App extends React.Component {
     let player = this.playersCarContext.getBoundingClientRect();
 
     if (
-      obstacle.x < player.x + player.width &&
-      obstacle.x + obstacle.width > player.x &&
-      obstacle.y < player.y + player.height &&
-      obstacle.y + obstacle.height > player.y
+      obstacle.left < player.left + player.width &&
+      obstacle.left + obstacle.width > player.left &&
+      obstacle.top < player.top + player.height &&
+      obstacle.top + obstacle.height > player.top
     ) {
       crash = true;
     }
@@ -314,10 +470,16 @@ class App extends React.Component {
   obstacleGenerator = () => {
     let obstacleId = "Obstacle" + Date.now();
 
+    let animationTime = `${this.getRandomInt(10, 12)}.${this.getRandomInt(
+      0,
+      9
+    )}s`;
+
     let obstacle = (
       <ObstacleVehicle
         id={obstacleId}
         key={obstacleId}
+        animationDuration={animationTime}
         left={this.getRandomInt(9, 91) + "%"}
         onAnimationEnd={this.removeObstacle}
       />
@@ -330,17 +492,31 @@ class App extends React.Component {
     }));
   };
 
-  componentDidMount() {
-    this.skidAudio = document.getElementsByClassName("audio-skid")[0];
-    this.accelerateAudio = document.getElementsByClassName(
-      "audio-accelerate"
-    )[0];
-    this.idleAudio = document.getElementsByClassName("audio-idle")[0];
+  handleTouchStart = e => {
+    window.addEventListener(
+      "touchstart",
+      function setHasTouch() {
 
+        window.removeEventListener("touchstart", setHasTouch);
+      },
+      false
+    );
+  };
+
+  componentDidMount() {
+    this.skidAudio = document.getElementsByClassName("sound-skid")[0];
+    this.accelerateAudio = document.getElementsByClassName(
+      "sound-accelerate"
+    )[0];
+    this.idleAudio = document.getElementsByClassName("sound-idle")[0];
+    this.crashAudio = document.getElementsByClassName("sound-crash")[0];
+    // this.musicTrack = document.getElementsByClassName("music-track")[0];
     this.playersCarContext = document.getElementById("playersCar");
+    this.road = document.getElementById("road");
 
     window.addEventListener("keydown", this.keyDown);
     window.addEventListener("keyup", this.keyUp);
+    window.addEventListener("load", this.musicTrackPlay);
   }
 
   componentWillUnmount() {
@@ -355,8 +531,16 @@ class App extends React.Component {
         id="container"
         className={`container ${this.state.animationStopper}`}
       >
+        {/* <MusicComponent /> */}
         <SoundComponent />
-        <div className="road">
+        <div
+          id="road"
+          className="road"
+          style={{
+            boxShadow: this.state.boxShadowInset
+          }}
+        >
+          {this.state.countDownDigit}
           {this.state.obstaclesArray.map(el => el.obstacle)}
         </div>
         <PlayersCar
@@ -368,14 +552,26 @@ class App extends React.Component {
 
         {this.state.gameMenu && (
           <GameMenu
+            initiateGame={this.initiateGame}
             startGame={this.startGame}
             resumeGame={this.resumeGame}
             exitGame={this.exitGame}
             gamePaused={this.state.gamePaused}
             gameScore={this.state.gameScore}
             gameOver={this.state.gameOver}
+            gameSound={this.state.gameSound}
+            gameMusic={this.state.gameMusic}
+            toggleMusic={this.toggleMusic}
+            toggleSound={this.toggleSound}
           />
         )}
+        <GameControls
+          gameStarted={this.state.gameStarted}
+          gamePaused={this.state.gamePaused}
+          gameOver={this.state.gameOver}
+          pauseGame={this.pauseGame}
+          resumeGame={this.resumeGame}
+        />
       </div>
     );
   }

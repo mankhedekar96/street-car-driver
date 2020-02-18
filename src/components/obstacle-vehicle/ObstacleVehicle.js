@@ -5,8 +5,9 @@ import { Vehicles } from "./../../vehicles";
 const VehicleType = ["truck", "miniTruck", "dumper", "van"];
 
 export default function ObstacleVehicle(props) {
-  const position = {
-    left: props.left
+  const style = {
+    left: props.left,
+    animationDuration : props.animationDuration
   };
 
   const randomVehicleType = VehicleType[Math.floor(Math.random() * VehicleType.length)];
@@ -18,8 +19,8 @@ export default function ObstacleVehicle(props) {
       onAnimationEnd={() => {
         props.onAnimationEnd(props.id);
       }}
-      style={position}
-      className={"obstacle-vehicle " + randomVehicleType}
+      style={style}
+      className={"obstacle-vehicle car-box-shadow " + randomVehicleType}
     >
       <img src={randomVehicle} alt="I am obstacle" />
     </div>
