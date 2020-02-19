@@ -546,6 +546,7 @@ class App extends React.Component {
           resumeGame={this.resumeGame}
           touchStartKeyUp={this.touchStartKeyUp}
           touchEndKeyDown={this.touchEndKeyDown}
+          gameKeysArray={this.gameKeysArray}
         />
       </div>
     );

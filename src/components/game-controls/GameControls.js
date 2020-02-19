@@ -11,24 +11,20 @@ import rightImage from "./../../images/right-arrow.svg";
 export default class GameMenu extends React.Component {
   constructor(props) {
     super(props);
-    this.arrowUp = null;
-    this.arrowDown = null;
-    this.arrowLeft = null;
-    this.arrowRight = null;
+    this.props.gameKeysArray.forEach( key => {
+      this[key] = React.createRef();
+    });
   }
 
   handleTouchStart = event => {
+    event.preventDefault();
     this.props.touchEndKeyDown(event.target.id);
   };
 
   handleTouchEnd = event => {
+    event.preventDefault();
     this.props.touchStartKeyUp(event.target.id);
   };
-
-  componentDidMount() {
-    document.addEventListener("touchstart", this.handleTouchStart);
-    document.addEventListener("touchend", this.handleTouchEnd);
-  }
 
   render() {
     return (
@@ -61,12 +57,18 @@ export default class GameMenu extends React.Component {
                   alt="gameKeys"
                   src={boosterImage}
                   id="ArrowUp"
+                  ref={this.ArrowUp}
+                  onTouchStart={this.handleTouchStart}
+                  onTouchEnd={this.handleTouchEnd}
                 />
                 <img
                   className="button--img"
                   alt="gameKeys"
                   src={brakeImage}
                   id="ArrowDown"
+                  ref={this.ArrowDown}
+                  onTouchStart={this.handleTouchStart}
+                  onTouchEnd={this.handleTouchEnd}
                 />
               </div>
               <div className="p-abs p-bottom-right">
@@ -75,12 +77,18 @@ export default class GameMenu extends React.Component {
                   alt="gameKeys"
                   src={leftImage}
                   id="ArrowLeft"
+                  ref={this.ArrowLeft}
+                  onTouchStart={this.handleTouchStart}
+                  onTouchEnd={this.handleTouchEnd}
                 />
                 <img
                   className="button--img"
                   alt="gameKeys"
                   src={rightImage}
                   id="ArrowRight"
+                  ref={this.ArrowRight}
+                  onTouchStart={this.handleTouchStart}
+                  onTouchEnd={this.handleTouchEnd}
                 />
               </div>
             </>
