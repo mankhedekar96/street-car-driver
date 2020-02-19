@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4a8d6281b6b04f012d5ead0ed7f5ddb8",
+    "revision": "368998f368d8b3c88cf3cb0230b5e011",
     "url": "/street-car-racer/index.html"
   },
   {
-    "revision": "f636343a9c0a9d22a847",
-    "url": "/street-car-racer/static/css/main.218b5845.chunk.css"
+    "revision": "976afbed8b35647eb443",
+    "url": "/street-car-racer/static/css/main.7d359208.chunk.css"
   },
   {
-    "revision": "39215c0451b592f282b9",
-    "url": "/street-car-racer/static/js/2.c03fd040.chunk.js"
+    "revision": "c4d2471c40e77a1665cf",
+    "url": "/street-car-racer/static/js/2.2f0cbe97.chunk.js"
   },
   {
     "revision": "99bd0487192ec9e7d9ee8fbbd91ee444",
-    "url": "/street-car-racer/static/js/2.c03fd040.chunk.js.LICENSE.txt"
+    "url": "/street-car-racer/static/js/2.2f0cbe97.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f636343a9c0a9d22a847",
-    "url": "/street-car-racer/static/js/main.90614dee.chunk.js"
+    "revision": "976afbed8b35647eb443",
+    "url": "/street-car-racer/static/js/main.4fa70ac2.chunk.js"
   },
   {
     "revision": "81c41c069466bd46b169",
@@ -34,6 +34,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "cb331f3ac358a489ae7795be0db0fbe2",
     "url": "/street-car-racer/static/media/blue-green-truck-mini.cb331f3a.svg"
+  },
+  {
+    "revision": "609a463a9aba33cbea5015f431cef39d",
+    "url": "/street-car-racer/static/media/booster.609a463a.svg"
+  },
+  {
+    "revision": "6a147f51d783630418d9d2dc98fd76e6",
+    "url": "/street-car-racer/static/media/brake.6a147f51.svg"
   },
   {
     "revision": "429ac3550ead5bdfc515335b8ec2f0cc",
@@ -60,16 +68,32 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/street-car-racer/static/media/grey-dumper.7a19030a.svg"
   },
   {
+    "revision": "5ce7d510e72f08851a274507eff31aaf",
+    "url": "/street-car-racer/static/media/left-arrow.5ce7d510.svg"
+  },
+  {
     "revision": "c06313bb6de2868698d9d42c2750558e",
     "url": "/street-car-racer/static/media/orange-van.c06313bb.svg"
+  },
+  {
+    "revision": "01c8b8741c94cabb85bdfe9487f50743",
+    "url": "/street-car-racer/static/media/pause.01c8b874.svg"
   },
   {
     "revision": "75171e23355044bca93705ab1b0f4646",
     "url": "/street-car-racer/static/media/pink-mini-truck.75171e23.svg"
   },
   {
+    "revision": "73c2bdf4eb9886cc1a14c1c7d4949fdb",
+    "url": "/street-car-racer/static/media/play.73c2bdf4.svg"
+  },
+  {
     "revision": "b89d0066470540c48810f9886663979f",
     "url": "/street-car-racer/static/media/red-truck.b89d0066.svg"
+  },
+  {
+    "revision": "1fa9ba5d81d14125acfb4ea677579a10",
+    "url": "/street-car-racer/static/media/right-arrow.1fa9ba5d.svg"
   },
   {
     "revision": "31fde6e7e92519c929b5cd76b0935f70",
