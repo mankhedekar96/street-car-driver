@@ -25,6 +25,12 @@
 .button--img{
     width: 50px;
     height: 50px;
+    background-color: transparent;
+    border: none;
+}
+
+.button--img:active{
+    border: none !important;
 }
 
 .p-abs{
@@ -53,4 +59,24 @@
 
 .p-bottom-right .button--img{
     margin: 0px 5px;
+}
+
+.booster-bg{
+    background-image: url('./../../images/booster.svg');
+    background-size: cover;
+}
+
+.brake-bg{
+    background-image: url('./../../images/brake.svg');
+    background-size: cover;
+}
+
+.right-bg{
+    background-image: url('./../../images/right-arrow.svg');
+    background-size: cover;
+}
+
+.left-bg{
+    background-image: url('./../../images/left-arrow.svg');
+    background-size: cover;
 }

@@ -3,10 +3,6 @@ import "./GameControls.css";
 
 import playImage from "./../../images/play.svg";
 import pauseImage from "./../../images/pause.svg";
-import boosterImage from "./../../images/booster.svg";
-import brakeImage from "./../../images/brake.svg";
-import leftImage from "./../../images/left-arrow.svg";
-import rightImage from "./../../images/right-arrow.svg";
 
 export default class GameMenu extends React.Component {
   constructor(props) {
@@ -17,14 +13,17 @@ export default class GameMenu extends React.Component {
   }
 
   handleTouchStart = event => {
-    event.preventDefault();
+    event.stopPropagation();
+    event.nativeEvent.stopImmediatePropagation();
     this.props.touchEndKeyDown(event.target.id);
   };
 
   handleTouchEnd = event => {
-    event.preventDefault();
+    event.stopPropagation();
+    event.nativeEvent.stopImmediatePropagation();
     this.props.touchStartKeyUp(event.target.id);
   };
+  
 
   render() {
     return (
@@ -52,19 +51,17 @@ export default class GameMenu extends React.Component {
           !this.props.gamePaused && (
             <>
               <div className="p-abs p-bottom-left">
-                <img
-                  className="button--img"
+                <button
+                  className="button--img booster-bg"
                   alt="gameKeys"
-                  src={boosterImage}
                   id="ArrowUp"
                   ref={this.ArrowUp}
                   onTouchStart={this.handleTouchStart}
                   onTouchEnd={this.handleTouchEnd}
                 />
-                <img
-                  className="button--img"
+                <button
+                  className="button--img brake-bg"
                   alt="gameKeys"
-                  src={brakeImage}
                   id="ArrowDown"
                   ref={this.ArrowDown}
                   onTouchStart={this.handleTouchStart}
@@ -72,19 +69,17 @@ export default class GameMenu extends React.Component {
                 />
               </div>
               <div className="p-abs p-bottom-right">
-                <img
-                  className="button--img"
+                <button
+                  className="button--img left-bg"
                   alt="gameKeys"
-                  src={leftImage}
                   id="ArrowLeft"
                   ref={this.ArrowLeft}
                   onTouchStart={this.handleTouchStart}
                   onTouchEnd={this.handleTouchEnd}
                 />
-                <img
-                  className="button--img"
+                <button
+                  className="button--img right-bg"
                   alt="gameKeys"
-                  src={rightImage}
                   id="ArrowRight"
                   ref={this.ArrowRight}
                   onTouchStart={this.handleTouchStart}

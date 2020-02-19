@@ -35,7 +35,7 @@ class App extends React.Component {
       playersCarBottom: 1,
       obstaclesArray: [],
       gameMenu: true,
-      gameMusic: true,
+      gameMusic: false,
       gameSound: true,
       gameScore: 0,
       gameStarted: false,
