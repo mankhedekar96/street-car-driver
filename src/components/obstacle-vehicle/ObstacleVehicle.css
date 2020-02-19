@@ -1,6 +1,5 @@
 .obstacle-vehicle {
   position: absolute;
-  transition: all 0.2s linear;
   animation: movingDown 10s linear;
   z-index: 4;
 }
