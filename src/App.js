@@ -9,7 +9,6 @@ import SoundComponent from "./components/sound-component/SoundComponent";
 import ObstacleVehicle from "./components/obstacle-vehicle/ObstacleVehicle";
 import MusicComponent from "./components/music-component/MusicComponent";
 
-
 class App extends React.Component {
   numberOfObstacles = 6;
   playersCarContext = null;
@@ -35,7 +34,7 @@ class App extends React.Component {
       playersCarBottom: 1,
       obstaclesArray: [],
       gameMenu: true,
-      gameMusic: false,
+      gameMusic: true,
       gameSound: true,
       gameScore: 0,
       gameStarted: false,
@@ -102,6 +101,7 @@ class App extends React.Component {
   clearGameIntervals = () => {
     clearInterval(this.animationID);
     clearInterval(this.obstacleID);
+    clearInterval(this.countdownTimerId);
   };
 
   connectingMovements = () => {
@@ -402,8 +402,7 @@ class App extends React.Component {
         }
       } else if (key === "Escape") this.resumeGame();
     }
-
-  }
+  };
 
   keyDown = event => {
     event.preventDefault();
@@ -420,8 +419,7 @@ class App extends React.Component {
       keys[key] = true;
       this.setState({ keys });
     }
-  }
-
+  };
 
   getRandomInt = (min, max) => {
     min = Math.ceil(min);
@@ -457,7 +455,10 @@ class App extends React.Component {
   obstacleGenerator = () => {
     let obstacleId = "Obstacle" + Date.now();
 
-    let animationTime = `${this.getRandomInt(10, 12)}.${this.getRandomInt(0,9)}s`;
+    let animationTime = `${this.getRandomInt(10, 12)}.${this.getRandomInt(
+      0,
+      9
+    )}s`;
 
     let obstacle = (
       <ObstacleVehicle

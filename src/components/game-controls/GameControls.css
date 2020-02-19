@@ -29,8 +29,9 @@
     border: none;
 }
 
-.button--img:active{
-    border: none !important;
+.button--img:focus{
+    border: 0px !important;
+    outline: 0px !important;
 }
 
 .p-abs{
