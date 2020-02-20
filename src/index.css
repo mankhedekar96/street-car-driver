@@ -1,6 +1,10 @@
 body {
   margin: 0;
   background: #111d1e;
-  font-family:url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
+  font-family: 'Akronim', cursive;
+}
+
+body * {
+  font-family: 'Akronim', cursive;
 }
 

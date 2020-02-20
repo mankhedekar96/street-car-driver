@@ -13,7 +13,7 @@ class App extends React.Component {
   numberOfObstacles = 6;
   playersCarContext = null;
   road = null;
-  carSpeed = 0.3;
+  carSpeed = 0.2;
   animationID = null;
   obstacleID = null;
   countdownTimerId = null;
