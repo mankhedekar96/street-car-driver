@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/street-car-racer/static/css/main.71007ff8.chunk.css",
-    "main.js": "/street-car-racer/static/js/main.4db5c1aa.chunk.js",
-    "main.js.map": "/street-car-racer/static/js/main.4db5c1aa.chunk.js.map",
+    "main.css": "/street-car-racer/static/css/main.103fb534.chunk.css",
+    "main.js": "/street-car-racer/static/js/main.a9d8a127.chunk.js",
+    "main.js.map": "/street-car-racer/static/js/main.a9d8a127.chunk.js.map",
     "runtime-main.js": "/street-car-racer/static/js/runtime-main.23576cb4.js",
     "runtime-main.js.map": "/street-car-racer/static/js/runtime-main.23576cb4.js.map",
     "static/js/2.3e42b03b.chunk.js": "/street-car-racer/static/js/2.3e42b03b.chunk.js",
     "static/js/2.3e42b03b.chunk.js.map": "/street-car-racer/static/js/2.3e42b03b.chunk.js.map",
     "index.html": "/street-car-racer/index.html",
-    "precache-manifest.9314da13ee68284adc766879871eeb53.js": "/street-car-racer/precache-manifest.9314da13ee68284adc766879871eeb53.js",
+    "precache-manifest.1ee14e42fe12606e663f58dd100ab27c.js": "/street-car-racer/precache-manifest.1ee14e42fe12606e663f58dd100ab27c.js",
     "service-worker.js": "/street-car-racer/service-worker.js",
-    "static/css/main.71007ff8.chunk.css.map": "/street-car-racer/static/css/main.71007ff8.chunk.css.map",
+    "static/css/main.103fb534.chunk.css.map": "/street-car-racer/static/css/main.103fb534.chunk.css.map",
     "static/js/2.3e42b03b.chunk.js.LICENSE.txt": "/street-car-racer/static/js/2.3e42b03b.chunk.js.LICENSE.txt",
     "static/media/App.css": "/street-car-racer/static/media/background-road.bbafffa6.jpg",
     "static/media/black-truck.svg": "/street-car-racer/static/media/black-truck.e7746021.svg",
@@ -35,7 +35,7 @@
   "entrypoints": [
     "static/js/runtime-main.23576cb4.js",
     "static/js/2.3e42b03b.chunk.js",
-    "static/css/main.71007ff8.chunk.css",
-    "static/js/main.4db5c1aa.chunk.js"
+    "static/css/main.103fb534.chunk.css",
+    "static/js/main.a9d8a127.chunk.js"
   ]
 }
