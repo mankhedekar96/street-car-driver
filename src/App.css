@@ -15,7 +15,7 @@
   background-position: 0 0;
   background-size: 100% 100%;
   height: 100%;
-  animation: roadMoving 30s linear infinite;
+  animation: roadMoving 60s linear infinite;
   overflow: hidden;
 }
 
@@ -50,7 +50,7 @@
     background-position: 0 0;
   }
   100% {
-    background-position: 0 20000px;
+    background-position: 0 2400vh;
   }
 }
 

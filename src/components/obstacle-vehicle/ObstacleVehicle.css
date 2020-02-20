@@ -32,10 +32,10 @@
 
 @keyframes movingDown {
   0% {
-    top: -100%;
+    top: -100vh;
   }
   /*use negative width if you want it to flow right to left else and positive for left to right*/
   100% {
-    top: 135%;
+    top: 135vh;
   }
 }
