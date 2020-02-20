@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2cd032d31df7512e19e5e7999e5d1b5d",
+    "revision": "8e326d520b4d620bd5fe7a2e4291afe3",
     "url": "/street-car-racer/index.html"
   },
   {
-    "revision": "acb4dbac46bf488ce208",
-    "url": "/street-car-racer/static/css/main.cd842e7d.chunk.css"
+    "revision": "e55df0a7ba6d743d3c83",
+    "url": "/street-car-racer/static/css/main.0ac18869.chunk.css"
   },
   {
     "revision": "d308890f60f7a0562eca",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/street-car-racer/static/js/2.3e42b03b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "acb4dbac46bf488ce208",
+    "revision": "e55df0a7ba6d743d3c83",
     "url": "/street-car-racer/static/js/main.f3931958.chunk.js"
   },
   {
@@ -24,8 +24,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/street-car-racer/static/js/runtime-main.23576cb4.js"
   },
   {
-    "revision": "bbafffa6a17229afe2e36618eb1e22b7",
-    "url": "/street-car-racer/static/media/background-road.bbafffa6.jpg"
+    "revision": "3c77985d9f518178dde1871653ac9d36",
+    "url": "/street-car-racer/static/media/bg-road.3c77985d.jpg"
   },
   {
     "revision": "e7746021c2330bd72e1d90b9b501a81e",
