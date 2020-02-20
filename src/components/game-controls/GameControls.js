@@ -52,14 +52,6 @@ export default class GameMenu extends React.Component {
             <>
               <div className="p-abs p-bottom-left">
                 <button
-                  className="button--img booster-bg"
-                  alt="gameKeys"
-                  id="ArrowUp"
-                  ref={this.ArrowUp}
-                  onTouchStart={this.handleTouchStart}
-                  onTouchEnd={this.handleTouchEnd}
-                />
-                <button
                   className="button--img brake-bg"
                   alt="gameKeys"
                   id="ArrowDown"
@@ -67,13 +59,21 @@ export default class GameMenu extends React.Component {
                   onTouchStart={this.handleTouchStart}
                   onTouchEnd={this.handleTouchEnd}
                 />
-              </div>
-              <div className="p-abs p-bottom-right">
                 <button
                   className="button--img left-bg"
                   alt="gameKeys"
                   id="ArrowLeft"
                   ref={this.ArrowLeft}
+                  onTouchStart={this.handleTouchStart}
+                  onTouchEnd={this.handleTouchEnd}
+                />
+              </div>
+              <div className="p-abs p-bottom-right">
+                <button
+                  className="button--img booster-bg"
+                  alt="gameKeys"
+                  id="ArrowUp"
+                  ref={this.ArrowUp}
                   onTouchStart={this.handleTouchStart}
                   onTouchEnd={this.handleTouchEnd}
                 />

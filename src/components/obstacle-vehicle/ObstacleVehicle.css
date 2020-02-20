@@ -11,23 +11,23 @@
 }
 
 .truck {
-  width: 16%;
-  height: 32%;
+  width: 75px;
+  height: 200px;
 }
 
 .miniTruck {
-  width: 16%;
-  height: 28%;
+  width: 75px;
+  height: 180px;
 }
 
 .dumper {
-  width: 16%;
-  height: 24%;
+  width: 70px;
+  height: 150px;
 }
 
 .van {
-  width: 15%;
-  height: 22%;
+  width: 55px;
+  height: 120px;
 }
 
 @keyframes movingDown {

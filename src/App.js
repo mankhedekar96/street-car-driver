@@ -13,7 +13,7 @@ class App extends React.Component {
   numberOfObstacles = 6;
   playersCarContext = null;
   road = null;
-  carSpeed = 1.5;
+  carSpeed = 0.1;
   animationID = null;
   obstacleID = null;
   countdownTimerId = null;
@@ -94,14 +94,13 @@ class App extends React.Component {
   };
 
   setGameIntervals = () => {
-    this.animationID = setInterval(this.driveCar, 200);
+    this.animationID = setInterval(this.driveCar, 1000/60);
     this.obstacleID = setInterval(this.obstacleGenerator, 5500);
   };
 
   clearGameIntervals = () => {
     clearInterval(this.animationID);
     clearInterval(this.obstacleID);
-    clearInterval(this.countdownTimerId);
   };
 
   connectingMovements = () => {
