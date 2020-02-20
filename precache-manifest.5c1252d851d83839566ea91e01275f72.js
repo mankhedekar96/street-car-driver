@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c26dff5c1c460edbad93b57a04fd8741",
+    "revision": "5813d2c0a3b461c4698089454349162f",
     "url": "/street-car-racer/index.html"
   },
   {
-    "revision": "0f171b9980c344303590",
-    "url": "/street-car-racer/static/css/main.afb41d8c.chunk.css"
+    "revision": "13309d4c7b37fc86b6a4",
+    "url": "/street-car-racer/static/css/main.3a990cfc.chunk.css"
   },
   {
-    "revision": "d308890f60f7a0562eca",
-    "url": "/street-car-racer/static/js/2.3e42b03b.chunk.js"
+    "revision": "e48b11267086da9253cb",
+    "url": "/street-car-racer/static/js/2.78143682.chunk.js"
   },
   {
     "revision": "99bd0487192ec9e7d9ee8fbbd91ee444",
-    "url": "/street-car-racer/static/js/2.3e42b03b.chunk.js.LICENSE.txt"
+    "url": "/street-car-racer/static/js/2.78143682.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0f171b9980c344303590",
-    "url": "/street-car-racer/static/js/main.f3931958.chunk.js"
+    "revision": "13309d4c7b37fc86b6a4",
+    "url": "/street-car-racer/static/js/main.90d95d14.chunk.js"
   },
   {
     "revision": "81c41c069466bd46b169",
@@ -98,10 +98,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "31fde6e7e92519c929b5cd76b0935f70",
     "url": "/street-car-racer/static/media/tire-skid.31fde6e7.wav"
-  },
-  {
-    "revision": "0c37c4b87c487b37a558669cdc9498c7",
-    "url": "/street-car-racer/static/media/vanity-van.0c37c4b8.svg"
   },
   {
     "revision": "1d5c956afe50bcb9e974b38e86f1043f",
