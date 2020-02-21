@@ -94,7 +94,7 @@ class App extends React.Component {
   };
 
   setGameIntervals = () => {
-    this.animationID = setInterval(this.driveCar, 1000/60);
+    this.animationID = setInterval(this.driveCar, 1000 / 60);
     this.obstacleID = setInterval(this.obstacleGenerator, 5500);
   };
 
