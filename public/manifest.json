@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Street Car Driver",
+  "name": "Street Car Driver – Game created using ReactJS library",
   "icons": [
     {
       "src": "favicon.ico",
